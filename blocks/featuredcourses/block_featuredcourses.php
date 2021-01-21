@@ -54,7 +54,7 @@ class block_featuredcourses extends block_base {
         $chelper = new coursecat_helper();
         foreach ($courses as $course) {
 
-            $course = new course_in_list($course);
+            $course = new core_course_list_element($course);
 
             $this->content->text .= '<div class="container-fluid coursebox">';
 
