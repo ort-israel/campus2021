@@ -1,0 +1,23 @@
+@font-face {
+  font-family: CarmelitRegular;
+  src: url([[font:theme_classic_finance|carmelitregular.woff]]);
+}
+
+$sm: 556px !default;
+$md: 768px !default;
+
+$white: #fff !default;
+$black-gray: #333333 !default;
+$dark-gray: #3e3e3e !default;
+$dark-gray2: #5d5d5d !default; //585858
+$light-gray: #939393 !default;//929292 //989898
+$light-gray2: #7f7f7f !default;
+$orange: #f90 !default;
+
+
+$text-color: $black-gray !default;
+
+//Unique blocks' ids
+$back-to-tests: inst914;
+$catch-cache: inst915;
+$personal-info: inst919;

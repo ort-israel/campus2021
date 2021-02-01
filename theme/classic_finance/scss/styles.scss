@@ -1,0 +1,19 @@
+body{
+  color: $text-color;
+  font-family: CarmelitRegular, Arial, Sans-Serif;
+}
+
+#page{
+  margin-top: 0;
+}
+
+a,
+#page-footer a{
+  color: $text-color;
+  text-decoration: underline;
+}
+
+/*-------- Content --------*/
+.region-main{
+  padding: 1rem;
+}

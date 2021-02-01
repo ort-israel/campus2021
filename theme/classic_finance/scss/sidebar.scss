@@ -1,0 +1,147 @@
+#page-content.blocks-pre .blockcolumn{
+  padding: 0;
+}
+
+.block{
+  background-color: $dark-gray;
+  color: $white;
+  border-top: 1px solid $light-gray;
+  margin-bottom: 0rem!important;
+  border-radius: 0;
+
+  .card-text a {
+    color: $white;
+    margin-top: 0;
+  }
+
+  &.block_html{
+    font-size: 1.1rem;
+
+    h2{
+      font-size: 1rem;
+    }
+
+    .card-text{
+      p{
+        margin-bottom: 0;
+      }
+
+      ul{
+        /*rtl:ignore*/
+        padding-right: 0;
+        /*rtl:ignore*/
+        margin-bottom: 0;
+      }
+
+      li{
+        list-style: none;
+        /*rtl:ignore*/
+        padding-right: 0.1rem;
+        /*rtl:ignore*/
+      }
+
+      a{
+        display: inline-block;
+        position: relative;
+        /*rtl:ignore*/
+        padding: 0.5rem 2rem 0.3rem 1rem;
+        /*rtl:ignore*/
+        border: 1px solid transparent;
+        border-radius: 50px;
+      }
+
+      a:before{
+        background-color: $dark-gray2;
+        border: 1px solid $light-gray2;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        /*rtl:ignore*/
+        right: 0.5rem;
+        /*rtl:ignore*/
+        top: 0.7rem;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      a:hover:before,
+      a:focus:before{
+        background-color: $orange;
+        border: 1px solid $white;
+      }
+
+      a:focus{
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+  }
+
+  a.qnbutton{
+    color: $text-color;
+  }
+
+  .block-controls{
+    float: none !important;
+
+    a.dropdown-toggle{
+      color: $white;
+    }
+  }
+
+  &##{$personal-info}{
+    a:hover,
+    a:focus{
+      background-color: $dark-gray2;
+      border-color: $light-gray;
+    }
+  }
+
+
+  &##{$back-to-tests},
+  &##{$catch-cache}{
+    background-color: $dark-gray2;
+  }
+
+  &##{$catch-cache}{
+    border-bottom: 2px solid $light-gray;
+
+    a:before{
+      background-color: $light-gray2;
+      border: 1px solid $light-gray;
+    }
+
+    a:hover:before,
+    a:focus:before{
+      background-color: $orange;
+      border: 1px solid $white;
+    }
+  }
+
+  &##{$back-to-tests}{
+    a:before,
+    a:before{
+      background: url([[pix:theme|finance]]) no-repeat 0px -218px;;
+      width: 23px;
+      height: 23px;
+      border: none;
+      border-radius: 0px;
+      /*rtl:ignore*/
+      right: .2rem;
+      /*rtl:ignore*/
+      top: .3rem;
+    }
+
+    a:hover:before,
+    a:focus:before{
+      background-position: 0px -248px;
+    }
+
+  }
+
+  //for form inside system administration block
+  .form-inline .form-group{
+    margin-bottom: 0;
+  }
+}
