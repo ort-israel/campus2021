@@ -1,0 +1,64 @@
+header{
+
+  .col-12.pt-3,
+  .card-body{
+    padding: 0 !important;
+  }
+
+  .card{
+    border: none;
+    background-color: transparent;
+  }
+
+  .brain-title{
+    color: white;
+    padding: 1.5rem 2.25rem;
+    background: bottom / cover url([[pix:theme|header]]);
+    border-bottom: 10px solid $red-orange;
+    font-family: OronBlck, Alef, Sans-Serif;
+  }
+
+  .logo{
+    display: inline-block;
+    text-indent: -99999px;
+    background-image: url([[pix:theme|sprite]]);
+    background-repeat: no-repeat;
+  }
+
+  .brain-title h1{
+    background-position: 0px 0px;
+    width: 231px;
+    height: 153px;
+  }
+
+  .logo-ort{
+    background-position: -60px -178px;
+    width: 184px;
+    height: 96px;
+  }
+
+  .header-bottom{
+    background-image: url([[pix:theme|PatternBreadcrambs]]);
+    background-color: #c4d3df;
+    padding: 1rem 2.25rem;
+  }
+
+  // small screen
+  @media screen and (max-width: $md){}
+
+  // large screen
+  @media screen and (min-width: $md){}
+
+}
+
+.#{$bigbrain-id} header{
+
+  .logo{
+    background-image: url([[pix:theme|sprite-b]]);
+  }
+
+  .brain-title {
+    background-image: url([[pix:theme|header-b]]);
+    border-bottom-color: $light-blue;
+  }
+}

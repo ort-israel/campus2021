@@ -1,0 +1,235 @@
+.region-main{
+  padding: 1rem;
+}
+
+#region-main{
+  border: none;
+
+  .gridicon_link{
+    $img-size: 10.8rem;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+
+    &:hover{
+      color: $text-color;
+    }
+
+    &:before{
+      position: absolute;
+      content: "";
+      background: url([[pix:theme|SpriteBrain]]) no-repeat;
+      width: $img-size;
+      height: $img-size;
+      /*rtl:ignore*/
+      right: calc(50% - (#{$img-size} / 2));
+      /*rtl:ignore*/
+      top: 0rem;
+      z-index: 1;
+    }
+
+    &#gridsection-1:before{
+      background-position-y: 0rem;
+    }
+
+    &#gridsection-2:before{
+      background-position-y: -11.3rem;
+    }
+
+    &#gridsection-3:before{
+      background-position-y: -22.6rem;
+    }
+
+    &#gridsection-4:before{
+      background-position-y: -33.9rem;
+    }
+
+    &#gridsection-5:before{
+      background-position-y: -45.2rem;
+    }
+
+    &#gridsection-6:before{
+      content: none;
+    }
+  }
+
+  #gridiconcontainer .icon_content{
+    font-family: FbmodularyBold, Alef, Arial, Sans-Serif;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    height: auto;
+  }
+
+  .course-content ul.gridicons li.currentselected{
+    background-color: transparent;
+  }
+
+  .gridicons li.currentselected .icon_content{
+    color: $text-color;
+  }
+
+  .image_holder{
+    visibility: hidden;
+    height: 11rem !important;
+  }
+
+  .tooltip.in{
+    opacity: 0.8;
+    margin-top: 0rem;
+  }
+
+  .tooltip-arrow{
+    position: absolute;
+    bottom: -0.6rem;
+    color: transparent;
+    border-style: solid;
+    border-width: 5px 5px 5px;
+    border-top-color: black;
+    /*rtl:ignore*/
+    margin-left: -5px;
+    /*rtl:ignore*/
+  }
+
+  ul.gridicons li .tooltip-inner {
+    background-color: black;
+    color: $light-gray;
+    margin-top: -0.4rem;
+  }
+
+  @media screen and (max-width: $md) {
+    .gridicons > li {
+      /*rtl:ignore*/
+      margin-left: 3rem;
+      /*rtl:ignore*/
+    }
+  }
+
+  @media screen and (min-width: $md){
+    .gridicons > li{
+      /*rtl:ignore*/
+      margin-left: 7.45rem;
+      /*rtl:ignore*/
+    }
+  }
+
+}
+
+.#{$bigbrain-id}{
+  #region-main{
+    .gridicon_link{
+      &:before {
+        background-image: url([[pix:theme|SpriteBrain-b]]);
+      }
+    }
+  }
+}
+
+/*------------------ Inner Page ------------------*/
+#section-0 {
+  .sectionname {
+    display: none;
+  }
+
+  .content{
+   .section,
+   .label,
+   .mod-indent-outer{
+     margin: 0;
+     padding: 0;
+   }
+  }
+}
+
+.single-section{
+  .mdl-left,
+  .mdl-right{
+    display: none;
+  }
+
+  .navigationtitle.section-navigation{
+    padding: 1rem;
+  }
+
+  h3.sectionname{
+    /*rtl:ignore*/
+    text-align: right;
+    /*rtl:ignore*/
+    margin: 0 2.5rem;
+  }
+
+  .summary p img{
+    /*rtl:ignore*/
+    float: right;
+    /*rtl:ignore*/
+    margin-left: 0.6rem;
+
+  }
+
+  .section-navigation.mdl-bottom{
+    display: none;
+  }
+}
+
+/*---------------- Activity -----------------*/
+.activity-navigation{
+  display: none;
+}
+
+/*----------------- Quiz ------------------*/
+.path-mod-quiz{
+
+  .que {
+    border-bottom: 1px solid;
+
+    .info {
+      background-color: transparent;
+      border: none;
+      /*rtl:ignore*/
+      padding-left: 0rem;
+      /*rtl:ignore*/
+
+      .no {
+        font-size: 1.75rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid $mandys-pink;
+      }
+
+      span.qno {
+        font-size: inherit;
+        font-size: inherit;
+      }
+    }
+
+    .formulation {
+      background-color: transparent;
+      color: $text-color;
+
+      p,
+      .specificfeedback,
+      .generalfeedback,
+      .rightanswer,
+      .im-feedback,
+      .feedback{
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    &.ddimageortext div.droparea .dropzones{
+      /*rtl:ignore*/
+      left: 0;
+      /*rtl:ignore*/
+    }
+
+  }
+
+  .activity-navigation{
+    display: none;
+  }
+
+    #mod_quiz_navblock .qnbutton:hover .thispageholder{
+    border-color: $orange;
+  }
+}
+

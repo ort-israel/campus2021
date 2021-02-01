@@ -1,0 +1,22 @@
+body{
+  color: $text-color;
+  font-family: Alef, Arial, Sans-Serif;
+  font-size: 1.13rem;
+}
+
+#page{
+  margin-top: 0;
+}
+
+a,
+#page-footer a{
+  color: $text-color;
+  text-decoration: underline;
+  &:hover{
+    color: $orange;
+  }
+}
+
+h1, h2, h3, h4, h5{
+  font-family: FbmodularyBold, Alef, Arial, Sans-Serif;
+}

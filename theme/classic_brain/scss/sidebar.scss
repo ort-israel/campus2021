@@ -1,0 +1,81 @@
+.blockcolumn.has-blocks{
+
+  >section{
+    background-image: url([[pix:theme|petternSide]]);
+    padding: 0.5rem 0;
+  }
+
+  .block{
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  .card-body{
+    padding: 0rem!important;
+  }
+
+  .card-title{
+    display: block !important;
+    padding: 0.5rem 1.1rem;
+    border-bottom: 1px solid $mandys-pink;
+
+    font-size: 1.44rem;
+  }
+
+  .card-text{
+    padding: 0rem 1rem 1rem;
+  }
+
+  ul{
+    /*rtl:ignore*/
+    padding: 0rem 1.4rem 0rem 0rem;
+    /*rtl:ignore*/
+  }
+
+  ul.navbar{
+    display: block;
+    box-shadow: none;
+    max-height: none;
+  }
+
+  //for form inside system administration block
+  .form-inline .form-group{
+    margin-bottom: 0;
+  }
+}
+
+.block.block_glossary_random.card{
+  background-image: url([[pix:theme|PatternBreadcrambs]]);
+  border-radius: 4px;
+
+  .card-title{
+    background-color: $light-gray;
+    margin-top: 0.8rem;
+  }
+
+  .card-text{
+    /*rtl:ignore*/
+    padding-left: 0;
+  }
+
+  h3{
+    display: block;
+    padding: 0rem 0.9rem;
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $light-gray1;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-transform: uppercase;
+  }
+
+  p{
+    font-size: 1.2rem;
+    /*rtl:ignore*/
+    padding: 0.3rem 0.7rem 0.3rem 1.1rem;
+    /*rtl:ignore*/
+    background-color: $light-gray;
+  }
+
+}
