@@ -1,0 +1,33 @@
+@font-face {
+  font-family: almoni-dl;
+  src: url([[font:theme_classic_philosophy|almoni.woff]]);
+}
+
+$text-color: #363636 !default;
+$light-gray1: #999999 !default;
+$light-gray2: #dddddd !default;
+$light-blue: #c6e9f0 !default;
+$light-green1: #edf1e7 !default;
+$light-green2: #dde5d0 !default;
+$Bisque1: #fde3bf !default;
+
+$md: 768px !default;
+$lg: 1024px !default;
+
+body{
+  color: $text-color;
+  font-family: almoni-dl, Arial, Sans-Serif;
+  font-size: 1.13rem;
+}
+
+@mixin main-title{
+  /*rtl:ignore*/
+  background: url([[pix:theme|frog]]) no-repeat scroll right 15px $light-green1;
+  /*rtl:ignore*/
+  border-top: 30px solid $light-green2;
+  /*rtl:ignore*/
+  padding: 1.5rem 4.2rem 1.1rem;
+  /*rtl:ignore*/
+  font-size: 1.75rem;
+  font-weight: bold;
+}

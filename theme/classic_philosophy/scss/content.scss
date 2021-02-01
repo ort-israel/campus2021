@@ -1,0 +1,129 @@
+/*------- General --------*/
+#page{
+  margin-top: 0;
+}
+
+a,
+#page-footer a{
+  color: $text-color;
+  text-decoration: underline;
+}
+
+/*-------- Content --------*/
+#region-main{
+  padding: 0;
+  border: none;
+}
+
+.region-main{
+  padding: 1rem;
+
+  #maincontent{
+    height: 0px;
+  }
+
+  .section{
+    margin-top: 0 !important;
+
+    .content .section-title{
+      font-weight: bold;
+      margin: 0.8rem 0.5rem;
+    }
+  }
+
+  #section-0 .sectionname,
+  div[role="main"] > h2{
+      @include main-title;
+    }
+
+  #section-0 p{
+    text-align: center;
+  }
+
+  iframe{
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: $lg){
+    #section-0 .section.img-text p{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 75%;
+
+      iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+
+
+}
+
+
+/*-------- Inner Page --------*/
+.topics{
+  border: 1px solid $light-gray2;
+}
+
+.single-section{
+  .sectionname{
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+  .section-navigation{
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0rem !important;
+  }
+}
+
+/*-------- Mod page --------*/
+.path-mod #region-main{
+  border: none;
+
+  .activity-navigation{
+    display: none;
+  }
+}
+
+.que {
+  #intro{
+    padding: 1rem;
+    border: 1px solid $light-gray2;
+  }
+
+  .info{
+    background-image: url([[pix:theme|QuizInfoBackground]]);
+    border: none;
+  }
+
+  .formulation{
+    color: $text-color;
+    background-color: $light-green1;
+
+    #responseform > div > .informationitem&{
+      padding: 0;
+    }
+
+    #responseform > div > .informationitem& .qtext{
+      @include main-title;
+
+      margin: 0rem;
+
+      p{
+        /*rtl:ignore*/
+        text-align: right !important;
+        margin-bottom: 0rem;
+      }
+    }
+  }
+
+
+}
+

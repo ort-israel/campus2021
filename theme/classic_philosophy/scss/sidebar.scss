@@ -1,0 +1,173 @@
+.blockcolumn{
+
+  .block-region {
+    background-image: url([[pix:theme|navBarBg]]);
+    padding-top: 50px;
+  }
+
+  .block{
+    position: relative;
+    background-color: transparent;
+    border: none;
+
+    margin-bottom: 0rem !important;
+
+    &:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+    }
+
+    &:not(:first-of-type):before{
+      background-image: url([[pix:theme|navBarSeperator]]);
+      background-repeat: no-repeat;
+      height: 10px;
+    }
+
+    &:first-of-type:before{
+      background-image: url([[pix:theme|navBarChar]]), url([[pix:theme|navBarSeperator]]);
+      background-repeat: no-repeat;
+      height: 50px;
+      top: -35px;
+    }
+
+    .path-mod-quiz &:first-of-type:before{
+      background-image: url([[pix:theme|Figure]]), url([[pix:theme|navBarSeperator]]);
+      background-repeat: no-repeat;
+      height: 95px;
+      /*rtl:ignore*/
+      right: 0;
+    }
+
+    // Small screens
+    @media screen and (max-width: $md){
+      &:not(:first-of-type):before{
+        background-position: center;
+      }
+
+      &:first-of-type:before{
+        /*rtl:ignore*/
+        background-position: calc(50% + 56px) 1px, center bottom 0px; //56px is to place the figure at the start of the separator
+      }
+
+      .path-mod-quiz &:first-of-type:before{
+        /*rtl:ignore*/
+        background-position: right 5px bottom 0px, center bottom 53px;
+      }
+    }
+
+    // Medium screens only
+    @media screen and (min-width: $md) and (max-width: $lg) {
+      &:not(:first-of-type):before{
+        background-position: center;
+      }
+
+      &:first-of-type:before{
+        /*rtl:ignore*/
+        background-position: calc(50% + 56px) 1px, center bottom 0px; //56px is to place the figure at the start of the separator
+      }
+
+      .path-mod-quiz &:first-of-type:before{
+        /*rtl:ignore*/
+        background-position: right 5px bottom 0px, right 50px bottom 53px;
+      }
+    }
+
+    //Large screens
+    @media screen and (min-width: $lg) {
+      &:not(:first-of-type):before{
+        /*rtl:ignore*/
+        background-position: right 50px bottom -2px;
+      }
+
+      &:first-of-type:before{
+        /*rtl:ignore*/
+        background-position: right 53px bottom 7px, right 50px bottom 0px;
+      }
+
+      .path-mod-quiz &:first-of-type:before {
+        /*rtl:ignore*/
+        background-position: right 5px bottom 0px, right 50px bottom 53px;
+      }
+    }
+
+  }
+
+  .card-title{
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .card-text{
+    margin-top: 0 !important;
+
+    ul{
+      list-style: none;
+      /*rtl:ignore*/
+      padding-right: 0rem;
+    }
+  }
+
+  a:hover{
+    color: $text-color;
+    background-color: $light-blue;
+  }
+
+  #mod_quiz_navblock{
+    /*rtl:ignore*/
+    padding-right: 3.5rem;
+  }
+
+  .block_glossary_random{
+    .card-title,
+    .footer{
+      display: none !important;
+    }
+
+    .block-controls{
+      float: none !important;
+    }
+
+    .content{
+      position: relative;
+      padding: 2rem 1rem 1rem 1.5rem;
+      background-color: $Bisque1;
+
+      &:before{
+        content: "";
+        position: absolute;
+        background: url([[pix:theme|rightTopArrow]]) no-repeat;
+        top: -10px;
+        /*rtl:ignore*/
+        right: -15px;
+        width: 105px;
+        height: 62px;
+      }
+
+      &:after{
+        content: "";
+        position: absolute;
+        background: url([[pix:theme|leftBottomArrow]]) no-repeat;
+        bottom: -15px;
+        /*rtl:ignore*/
+        left: -0px;
+        width: 44px;
+        height: 84px;
+      }
+
+      h3{
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  //for form inside system administration block
+  .form-inline .form-group{
+    margin-bottom: 0;
+  }
+
+  &.columnright{
+    display: none;
+  }
+}

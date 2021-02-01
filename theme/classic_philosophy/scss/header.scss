@@ -1,0 +1,100 @@
+header {
+  .pb-3 {
+    padding: 0 !important;
+  }
+
+  .card {
+    padding: 0rem;
+    background: $light-green2 url([[pix:theme|HeaderBg]]) repeat-x;
+    border: none;
+  }
+
+  .card-body {
+    padding: 0 1.25rem;
+  }
+
+  a h1,
+  .logo {
+    display: inline-block;
+    text-indent: -99999px;
+    background-repeat: no-repeat;
+  }
+
+  a h1 {
+    width: 100vw;
+    max-width: 37.125rem;
+    height: 11.875rem;
+    background-image: url([[pix:theme|philo_heder]]);
+    background-size: cover;
+    /*rtl:ignore*/
+    background-position: right;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    background-image: url([[pix:theme|philo_sprite_logo]]);
+  }
+
+  .logo-poalim {
+    width: 10rem;
+    height: 3rem;
+    background-position: center top;
+  }
+
+  .logo-ort {
+    width: 10rem;
+    height: 4.1rem;
+    background-position: center center;
+  }
+
+  .logo-denur {
+    width: 15rem;
+    height: 4.1rem;
+    background-position: center bottom;
+  }
+
+  .header-bottom {
+    padding: 1rem;
+  }
+
+
+  // small screen
+  @media screen and (max-width: $md) {
+    .logos{
+      padding-top: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    &#page-header .logo{
+      margin: 0;
+    }
+
+    &#page-header .logo-ort {
+      margin-top: 0.7rem;
+    }
+
+  }
+
+  // Small & medium screen
+  @media screen and (max-width: $lg) {
+    .card {
+      background-position: bottom;
+    }
+
+    .card-body > div {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // Large screen
+  @media screen and (min-width: $lg) {
+    .logos {
+      max-width: 20rem;
+      margin-top: 1rem;
+    }
+
+    .logo {
+      margin: 0 !important;
+    }
+  }
+}
