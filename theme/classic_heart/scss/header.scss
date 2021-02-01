@@ -1,0 +1,143 @@
+header{
+  .col-12.pt-3,
+  .card-body{
+    padding: 0 !important;
+  }
+
+  .card{
+    border: none;
+  }
+
+  .heart-title{
+    color: white;
+    padding: 2.25rem;
+    border-bottom: 15px solid #008ffa;
+    font-family: OronBlck, Alef, Sans-Serif;
+  }
+
+  h1 a,
+  .logo{
+    display: inline-block;
+    text-indent: -99999px;
+  }
+
+  &#page-header .logo{
+    margin: 0;
+  }
+
+  &#page-header .logo-biosense{
+    /*rtl:ignore*/
+    margin-left: 1rem;
+    /*rtl:ignore*/
+  }
+
+  .header-bottom{
+    background-image: url([[pix:theme|patternX]]);
+    background-color: #c4d3df;
+    padding: 1rem 2.25rem;
+  }
+
+  // small screen
+  @media screen and (max-width: $md){
+    .breadcrumb:not(:empty){
+      border: none;
+    }
+
+    .logos{
+      margin: 1rem 0;
+    }
+
+    .logo{
+      background-image: url([[pix:theme|sprite_mobile]]);
+      background-repeat: no-repeat;
+    }
+
+    .logo-ort{
+      background-position: 0px -209px;
+      width: 105px;
+      height: 57px;
+      margin-right: 10px;
+    }
+
+    .logo-biosense{
+      background-position: 0px -159px;
+      width: 172px;
+      height: 42px;
+    }
+
+    .heart-title{
+      background-image: url([[pix:theme|pattern]]);
+      background-color: #013555;
+    }
+
+    .heart-title > div{
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .heart-title a{
+      background-position: 50% 0px;
+      width: 100%;
+      height: 153px;
+    }
+
+
+  }
+
+  // large screen
+  @media screen and (min-width: $md){
+    background-image: url([[pix:theme|pattern]]);
+    background-color: #013555;
+
+    .logos{
+      position: absolute;
+      top: 2.25rem;
+      /*rtl:ignore*/
+      left: 2.25rem;
+      /*rtl:ignore*/
+    }
+
+    .logo{
+      background-image: url([[pix:theme|sprite_web]]);
+    }
+
+    .logo-ort{
+      background-position: 0px -269px;
+      width: 133px;
+      height: 72px;
+    }
+
+    .logo-biosense{
+      background-position: 0px -198px;
+      width: 255px;
+      height: 62px;
+      /*rtl:ignore*/
+      margin-left: 1rem;
+      /*rtl:ignore*/
+    }
+
+    .card{
+      position: static;
+      background-color: transparent;
+    }
+
+    .heart-title > div{
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    .heart-title a{
+      background-position: 0px 0px;
+      width: 322px;
+      height: 188px;
+    }
+
+
+  }
+
+  .breadcrumb-item+.breadcrumb-item::before{
+    content: ">";
+  }
+
+}

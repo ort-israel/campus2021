@@ -1,0 +1,11 @@
+footer{
+  background-image: url([[pix:theme|pattern]]);
+  background-color: #e7e8e9;
+  border-top: 15px solid #008ffa;
+  text-align: center;
+  padding: 3.5rem 2rem;
+
+  .separator:last-of-type{
+    display: none;
+  }
+}
