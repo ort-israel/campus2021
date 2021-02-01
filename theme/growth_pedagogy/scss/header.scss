@@ -1,0 +1,61 @@
+.navbar {
+  max-height: $nav-bar-height-mobile;
+  background-color: $dark;
+  padding: 0.5rem 2.5rem;
+
+  .navbar-nav {
+
+    .usermenu .menubar .dropdown-menu {
+      span.userbutton,
+      .dropdown-item {
+        color: $perception-base;
+        @include hover-focus {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+
+/*pop ups*/
+.navbar .popover-region-container,
+.navbar .popover-region .popover-region-container {
+  top: 9rem;
+  @include breakpoint(mobile-tablet) {
+    top: 3.7rem;
+  }
+
+}
+
+
+.headerlogo img {
+  padding: $spacer 0;
+}
+
+header#page-header {
+  padding: 2rem 2.25rem 0;
+  @include breakpoint(mobileonly) {
+    padding: 1rem;
+  }
+
+  .card {
+    background-color: transparent;
+
+    .card-body {
+      background-color: rgba(231, 231, 229, .9);
+      margin-top: 14rem;
+      padding: 1.25rem 2.5rem;
+      @include breakpoint(mobileonly) {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        max-width: 19rem;
+        @media screen and (max-width: 450px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

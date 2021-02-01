@@ -1,0 +1,40 @@
+/* STATISTICS */
+.statistics {
+  text-align: center;
+  width: 100%;
+
+  .statisticslist {
+    margin-bottom: 5rem;
+    @include breakpoint(mobileonly) {
+      margin-bottom: 0;
+    }
+  }
+
+  .statistics-title,
+  .statisticsterm {
+    font-size: $font-size-title;
+  }
+
+  .statisticsterm {
+    font-weight: 400;
+  }
+
+  [class*="num"] {
+    text-align: center;
+    @include breakpoint(mobileonly) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .statisticsdefinition {
+    font-weight: 800;
+    font-size: 6.25rem;
+    color: $perception-base;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .btn-secondary {
+    margin-top: 5rem;
+  }
+}
