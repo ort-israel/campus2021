@@ -1,0 +1,133 @@
+header{
+  .col-12.pt-3,
+  .card-body{
+    padding: 0 !important;
+  }
+
+  .card{
+    border: none;
+  }
+
+  h1 a,
+  .logo{
+    display: inline-block;
+    text-indent: -99999px;
+  }
+
+  &#page-header .logo{
+    margin: 0;
+  }
+
+  &#page-header .logo-madamuseum{
+    /*rtl:ignore*/
+  }
+
+  .header-bottom{
+    background-color: $light-gray;
+    padding: 1rem 2.25rem;
+  }
+
+  // small screen
+  @media screen and (max-width: $md){
+    .header-content{
+      flex-direction: column-reverse;
+    }
+
+    .osos-title{
+      justify-content: center;
+      background: url([[pix:theme|header]]) no-repeat;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    .osos-title a{
+      background-position: 0 -10px;
+      width: 268px;
+      height: 137px;
+    }
+
+    .logos{
+      margin: 1rem 0;
+      justify-content: center;
+    }
+
+    .logo{
+      background: url([[pix:theme|sprite_mobile]]) no-repeat;
+    }
+
+    .logo-ort{
+      background-position: -6px -201px;
+      width: 157px;
+      height: 57px;
+      /*rtl:ignore*/
+      margin-left: 1rem !important;
+    }
+
+    .logo-madamuseum{
+      background-position: -6px -299px;
+      width: 153px;
+      height: 54px;
+    }
+
+
+    .breadcrumb:not(:empty){
+      border: none;
+    }
+
+  }
+
+  // large screen
+  @media screen and (min-width: $md){
+    .card{
+      position: static;
+      background-color: transparent;
+    }
+
+    .header-content{
+      background: url([[pix:theme|header]]) no-repeat;
+      background-size: cover;
+      /*rtl:ignore*/
+      padding: 2.5rem;
+    }
+
+    .osos-title a{
+      background-position: 0px 0px;
+      width: 424px;
+      height: 217px;
+    }
+
+    .logos{
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      /*rtl:ignore*/
+      margin-right: 1rem;
+    }
+
+    .logo{
+      background: url([[pix:theme|sprite_web]]) no-repeat;
+    }
+
+    .logo-ort{
+      /*rtl:ignore*/
+      background-position: right -323px;
+      width: 196px;
+      height: 85px;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo-madamuseum{
+      /*rtl:ignore*/
+      background-position: right -494px;
+      width: 162px;
+      height: 106px;
+    }
+
+
+  }
+
+  .breadcrumb-item+.breadcrumb-item::before{
+    content: ">";
+  }
+
+}

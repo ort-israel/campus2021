@@ -1,0 +1,27 @@
+#region-main{
+  border: none;
+}
+
+.gtopics{
+  border-bottom: 2px solid $light-gray;
+}
+
+#section-0{
+  .atto_bsgrid > .row-fluid{
+    justify-content: center;
+
+    .col-md-4{
+      max-width: 240px;
+    }
+  }
+}
+
+#gridiconcontainer{
+  .gridicons > li{
+    margin: 1rem 1.5rem;
+  }
+}
+
+.activity-navigation{
+  display: none;
+}

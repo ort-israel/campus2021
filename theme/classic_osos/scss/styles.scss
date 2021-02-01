@@ -1,0 +1,54 @@
+/*------- General --------*/
+body{
+  color: $text-color;
+  font-family: Alef, Arial, Sans-Serif;
+  font-size: 1.13rem;
+}
+
+#page{
+  margin-top: 0;
+}
+
+a{
+  color: $text-color;
+  text-decoration: underline;
+
+  &:hover{
+    color: $red;
+  }
+}
+
+h1, h2, h3, h4, h5{
+  font-family: OronBlck, Alef, Arial, Sans-Serif;
+}
+
+/*-------- Content --------*/
+.region-main{
+  padding: 1rem;
+
+  .section{
+    .content .section-title{
+      margin: 0.8rem 0.5rem;
+    }
+  }
+}
+
+#section-0 .sectionname{
+  display: none;
+}
+
+.single-section{
+  .sectionname{
+    font-size: 2.640625rem;
+  }
+
+  //small screen
+  @media screen and (max-width:$md){
+    .mdl-left,
+    .mdl-right {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+

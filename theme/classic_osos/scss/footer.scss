@@ -1,0 +1,35 @@
+footer#page-footer{
+  background-color: $light-gray;
+  border-top: 15px solid $light-blue;
+  text-align: center;
+  padding: 3.5rem 2rem;
+
+  span{
+    display: inline-block;
+  }
+
+  a{
+    display: inline-block;
+    color: $text-color;
+    border-bottom: 1px dotted;
+    text-decoration: none;
+
+    &:before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    &:hover,
+    &:focus{
+      font-weight: bold;
+    }
+  }
+
+  .separator:last-of-type{
+    display: none;
+  }
+}
