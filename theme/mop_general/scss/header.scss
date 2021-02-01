@@ -1,0 +1,108 @@
+.navbar {
+  max-height: $nav-bar-height-mobile;
+  background-color: $dark;
+  padding: 0.5rem 2.5rem;
+
+  .navbar-nav {
+
+    .usermenu .menubar .dropdown-menu {
+      span.userbutton,
+      .dropdown-item {
+        color: $perception-base;
+        @include hover-focus {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+
+/*pop ups*/
+.navbar .popover-region-container,
+.navbar .popover-region .popover-region-container {
+  top: 9rem;
+  @include breakpoint(mobile-tablet) {
+    top: 3.7rem;
+  }
+
+}
+
+
+.headerlogo img {
+  padding: $spacer 0;
+}
+
+header#page-header {
+  padding: 2rem 2.25rem 0;
+  @include breakpoint(mobileonly) {
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: $headings-color;
+    font-weight: inherit;
+    padding: 0 4rem 3rem 1rem;
+    margin-bottom: 2rem;
+    @include breakpoint(fordsonfall) {
+      text-align: center;
+      padding: 0;
+    }
+
+    .fullname {
+      font-size: $font-size-h1-x-large;
+      font-family: $font-family-header;
+      position: relative;
+      /*rtl:begin:ignore*/
+      padding-left: 1rem;
+      /*rtl:end:ignore*/
+      @include breakpoint(fordsonfall) {
+        font-size: $font-size-h1-x-large-mobile;
+        display: block;
+      }
+    }
+
+    .fullname::after {
+      content: '-';
+      position: relative;
+      top: 23%;
+      /*rtl:begin:ignore*/
+      left: -0.8rem;
+      /*rtl:end:ignore*/
+    }
+
+    .shortname {
+      font-size: $font-size-h1-large;
+      @include breakpoint(fordsonfall) {
+        font-size: $font-size-h1-large-mobile;
+        font-weight: bold;
+        display: block;
+        margin-top: 1.25rem;
+      }
+    }
+  }
+
+  .card {
+    background-color: transparent;
+
+    .card-body {
+      background-color: rgba(231, 231, 229, .9);
+      margin-top: 20rem;
+      padding: 2rem 5rem;
+      @include breakpoint(mobileonly) {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        max-width: 30rem;
+        @media screen and (max-width: 450px) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
