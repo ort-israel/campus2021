@@ -1,0 +1,15 @@
+.region-main{
+  padding: 1rem;
+
+  .section{
+    .content .sectionname{
+		font-size: 1.4rem;
+		margin: 0.5rem;
+    }
+  }
+  
+  .course-content ul.flexsections-level-1>li.section.main{
+	border-bottom: none;
+	margin-top: 0.5rem;
+  }
+}
