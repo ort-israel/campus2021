@@ -262,6 +262,11 @@ div#myoverview_timeline_courses .list-group-item {
   padding: 1rem 0;
 }
 
+.activity-navigation a,
+.activity-navigation a:hover{
+  color: $white;
+}
+
 .mt-5.mb-1.activity-navigation.container-fluid {
   margin-top: 0 !important;
 }
@@ -541,10 +546,6 @@ div#fordsonlogin {
 // Create new course hide everything.  Let user fine tune after creating course.
 #page-course-edit.format-site fieldset#id_courseformathdr, #page-course-edit.format-site fieldset#id_appearancehdr, #page-course-edit.format-site fieldset#id_filehdr, #page-course-edit.format-site fieldset#id_completionhdr, #page-course-edit.format-site fieldset#id_groups, #page-course-edit.format-site fieldset#id_tagshdr, #page-course-edit.format-site fieldset#id_rolerenaming {
   display: none;
-}
-
-.btn, .btn-link {
-  color: $white;
 }
 
 // Remove boxshadow
