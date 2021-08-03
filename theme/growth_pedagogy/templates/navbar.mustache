@@ -17,7 +17,7 @@
 {{!
     Page navbar.
 }}
-<nav class="fixed-top navbar navbar-fhs {{#output.show_teacher_navbarcolor}}navbar-teacher{{/output.show_teacher_navbarcolor}} {{#output.show_student_navbarcolor}}navbar-student{{/output.show_student_navbarcolor}} navbar-expand moodle-has-zindex">
+<nav class="fixed-top navbar navbar-fhs navbar-expand moodle-has-zindex">
     {{#hasfhsdrawer}}
         <div data-region="drawer-toggle" class="d-inline-block mr-3">
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
@@ -35,7 +35,7 @@
 
         <ul class="navbar-nav d-none d-md-flex">
             <!-- custom_menu -->
-            {{{ output.fordson_custom_menu }}}
+            {{{ output.growth_pedagogy_custom_menu }}}
             {{{ output.custom_menu }}}
             <!-- page_heading_menu -->
             {{{ output.page_heading_menu }}}

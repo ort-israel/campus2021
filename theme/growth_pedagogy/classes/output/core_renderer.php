@@ -312,7 +312,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return 1;
     }
 
-    public function fordson_custom_menu() {
+    public function growth_pedagogy_custom_menu() {
         global $CFG, $COURSE, $PAGE, $OUTPUT;
         $context = $this->page->context;
         $menu = new custom_menu();
@@ -1138,7 +1138,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     public function footer_about() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->footnote_about;
         return $setting != '' ? $setting : '';
     }
@@ -1149,37 +1149,37 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     public function footer_address() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->address;
         return $setting != '' ? $setting : '';
     }
 
     public function footer_email() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->email;
         return $setting != '' ? $setting : '';
     }
 
     public function footer_phone() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->phone;
         return $setting != '' ? $setting : '';
     }
 
     public function footer_tutorials_link_url() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->tutorials;
         return $setting != '' ? $setting : '';
     }
 
     public function footer_facebook() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->facebook;
         return $setting != '' ? $setting : '';
     }
 
     public function footer_siteregulation_url() {
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('growth_pedagogy');
         $setting = $theme->settings->siteregulation;
         return $setting != '' ? $setting : '';
     }
@@ -1226,11 +1226,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     public function show_student_navbarcolor() {
         global $PAGE;
-        $theme = theme_config::load('fordson');
+        $theme = theme_config::load('growth_pedagogy');
         $context = $this->page->context;
         $hasstudentrole = !has_capability('moodle/course:viewhiddenactivities', $context);
 
-        if ($hasstudentrole) {
+        if ($PAGE->theme->settings->navbarcolorswitch == 1 && $hasstudentrole) {
             return true;
         }
         return false;
