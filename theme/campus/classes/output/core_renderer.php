@@ -690,7 +690,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->render_from_template('theme_campus/socialicons', $socialcontext);
     }
 
-     public function customlogin() {
+    public function customlogin() {
         global $PAGE;
         $hasloginnav1icon = (empty($PAGE->theme->settings->loginnav1icon)) ? false : $PAGE->theme->settings->loginnav1icon;
         $hasloginnav2icon = (empty($PAGE->theme->settings->loginnav2icon)) ? false : $PAGE->theme->settings->loginnav2icon;
@@ -743,6 +743,64 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->render_from_template('theme_campus/customlogin', $customlogin_context);
     }
 
+    public function teacherdashmenu() {
+        global $PAGE, $COURSE, $CFG, $DB, $OUTPUT;
+        $course = $this->page->course;
+        $context = context_course::instance($course->id);
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle && isloggedin() && !isguestuser();
+        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
+        $togglebutton = '';
+        $togglebuttonstudent = '';
+        $hasteacherdash = '';
+        $hasstudentdash = '';
+        $globalhaseasyenrollment = enrol_get_plugin('easy');
+        $coursehaseasyenrollment = '';
+        if ($globalhaseasyenrollment) {
+            $coursehaseasyenrollment = $DB->record_exists('enrol', array(
+                'courseid' => $COURSE->id,
+                'enrol' => 'easy'
+            ));
+            $easyenrollinstance = $DB->get_record('enrol', array(
+                'courseid' => $COURSE->id,
+                'enrol' => 'easy'
+            ));
+        }
+        if ($coursehaseasyenrollment && isset($COURSE->id) && $COURSE->id > 1) {
+            $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
+            $easycodelink = new moodle_url('/enrol/editinstance.php', array(
+                'courseid' => $PAGE->course->id,
+                'id' => $easyenrollinstance->id,
+                'type' => 'easy'
+            ));
+        }
+        if (isloggedin() && isset($COURSE->id) && $COURSE->id > 1) {
+            $course = $this->page->course;
+            $context = context_course::instance($course->id);
+            $hasteacherdash = has_capability('moodle/course:viewhiddenactivities', $context);
+            $hasstudentdash = !has_capability('moodle/course:viewhiddenactivities', $context);
+            if (has_capability('moodle/course:viewhiddenactivities', $context)) {
+                $togglebutton = get_string('coursemanagementbutton', 'theme_campus');
+            } else {
+                $togglebuttonstudent = get_string('studentdashbutton', 'theme_campus');
+            }
+        }
+        $siteadmintitle = get_string('siteadminquicklink', 'theme_campus');
+        $siteadminurl = new moodle_url('/admin/search.php');
+        $hasadminlink = has_capability('moodle/site:configview', $context);
+        $course = $this->page->course;
+        // Send to template.
+        $dashmenu = ['showincourseonly' => $showincourseonly, 'togglebutton' => $togglebutton, 'togglebuttonstudent' => $togglebuttonstudent, 'hasteacherdash' => $hasteacherdash, 'hasstudentdash' => $hasstudentdash, 'haspermission' => $haspermission, 'hasadminlink' => $hasadminlink, 'siteadmintitle' => $siteadmintitle, 'siteadminurl' => $siteadminurl,];
+        // Attach easy enrollment links if active.
+        if ($globalhaseasyenrollment && $coursehaseasyenrollment) {
+            $dashmenu['dashmenu'][] = array(
+                'haseasyenrollment' => $coursehaseasyenrollment,
+                'title' => $easycodetitle,
+                'url' => $easycodelink
+            );
+        }
+        return $this->render_from_template('theme_campus/teacherdashmenu', $dashmenu);
+    }
+	
     public function teacherdash() {
         global $PAGE, $COURSE, $CFG, $DB, $OUTPUT, $USER;
         require_once($CFG->dirroot . '/completion/classes/progress.php');

@@ -249,9 +249,6 @@ body a {
 }
 
 #page-content { /* when in header, use the inherited style */
-  a {
-    text-decoration: underline;
-  }
 
   [data-region="blocks-column"] a {
     text-decoration: none;
@@ -522,6 +519,11 @@ div#myoverview_timeline_courses .list-group-item {
   background-color: $perception-base;
   color: $white;
   padding: 1rem 0;
+}
+
+.activity-navigation a,
+.activity-navigation a:hover{
+  color: $white;
 }
 
 .mt-5.mb-1.activity-navigation.container-fluid {
@@ -809,10 +811,6 @@ div#fordsonlogin {
   display: none;
 }
 
-.btn, .btn-link {
-  color: $white;
-}
-
 // Remove boxshadow
 .aabtn.focus, .btn-link.focus, .nav-link.focus, .atto_link_button.focus, [role="button"].focus, .list-group-item-action.focus, input[type="checkbox"].focus, input[type="radio"].focus, input[type="file"].focus, input[type="image"].focus, .sr-only-focusable.focus, a.dropdown-item.focus, a.dropdown-toggle.focus, .modal-dialog[tabindex="0"].focus, .moodle-dialogue-base .closebutton.focus, button.close.focus, .aabtn:focus, .btn-link:focus, .nav-link:focus, .atto_link_button:focus, [role="button"]:focus, .list-group-item-action:focus, input[type="checkbox"]:focus, input[type="radio"]:focus, input[type="file"]:focus, input[type="image"]:focus, .sr-only-focusable:focus, a.dropdown-item:focus, a.dropdown-toggle:focus, .modal-dialog[tabindex="0"]:focus, .moodle-dialogue-base .closebutton:focus, button.close:focus {
   outline: 0;
@@ -829,4 +827,8 @@ i.fa.fa-video-camera.jitsivideoicon {
 span.jistibuttontext {
   vertical-align: middle;
   font-size: 22px;
+}
+
+.dropdown-item:active a, .dropdown-item:hover a, .dropdown-item:focus a, .dropdown-item:focus-within a {
+  color: inherit;
 }

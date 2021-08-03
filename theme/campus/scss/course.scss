@@ -228,7 +228,7 @@ body.format-flexsections .course-content ul.flexsections-level-1 li.section.main
 
 /* Make title font size smaller in grid format, so more words fit it*/
 div [id*="gridsectionname"] {
-  font-size: $font-size-middle;
+  font-size: $perceptionfontsize;
 }
 
 

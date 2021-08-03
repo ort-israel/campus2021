@@ -196,7 +196,8 @@ header#page-header img.userpicture {
     background: none;
   }
 
-  ul.breadcrumb a {
+  ul.breadcrumb a,
+  ul.breadcrumb a:focus{
     color: $breadcrumb-text-color;
   }
 
