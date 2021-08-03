@@ -187,7 +187,8 @@ header#page-header {
     background: none;
   }
 
-  ul.breadcrumb a {
+  ul.breadcrumb a,
+  ul.breadcrumb a:focus {
     color: $breadcrumb-text-color;
   }
 

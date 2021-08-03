@@ -65,7 +65,6 @@
         <div id="learningcontent">
 
             {{{ output.teacherdash }}}
-            {{> theme_bediuk/blockspanelslider}}
             {{{ output.full_header }}}
 
             <div id="page-content" class="row pb-3">
@@ -105,9 +104,7 @@
 
     {{{ output.standard_after_main_region_html }}}
 
-    {{#hasfhsdrawer}}
-        {{> theme_boost/nav-drawer }}
-    {{/hasfhsdrawer}}
+	{{> theme_boost/nav-drawer }}
 
     {{#hasactivitynav}}
         {{{ output.activity_navigation }}}
@@ -124,10 +121,9 @@
 </html>
 {{#js}}
     require(['theme_boost/loader']);
-    require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
-    {{#hasfhsdrawer}}
+    {{! // fix path to tooltip according to: https://moodle.org/mod/forum/discuss.php?d=417266#p1684338}}
+    require(['jquery','theme_boost/bootstrap/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
         require(['theme_boost/drawer'], function(mod) {
         mod.init();
         });
-    {{/hasfhsdrawer}}
 {{/js}}

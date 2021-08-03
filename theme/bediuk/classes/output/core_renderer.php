@@ -45,15 +45,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     public function full_header() {
         global $PAGE, $COURSE, $course, $OUTPUT;
-        $theme = theme_config::load('campus');
+        $theme = theme_config::load('bediuk');
         $header = new stdClass();
         $header->headerimagelocation = false;
 
-        if (!$PAGE->theme->settings->coursemanagementtoggle) {
-            $header->settingsmenu = $this->context_header_settings_menu();
-        } else if (isset($COURSE->id) && $COURSE->id == 1) {
-            $header->settingsmenu = $this->context_header_settings_menu();
-        }
+        $header->settingsmenu = $this->context_header_settings_menu();
+
         $header->contextheader = html_writer::link(new moodle_url('/course/view.php', array(
             'id' => $PAGE->course->id
         )), $this->context_header());
@@ -154,14 +151,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
 
-        } else if ($courseimage && isset($headerbg) && !theme_campus_alternative_get_setting('showcourseheaderimage')) {
+        } else if ($courseimage && isset($headerbg) && !theme_bediuk_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('customimage', array(
                 'style' => 'background-image: url("' . $headerbgimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
             ));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
 
-        } else if (!$courseimage && isset($headerbg) && !theme_campus_alternative_get_setting('showcourseheaderimage')) {
+        } else if (!$courseimage && isset($headerbg) && !theme_bediuk_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('customimage', array(
                 'style' => 'background-image: url("' . $headerbgimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
@@ -662,7 +659,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $togglebuttonstudent = '';
         $hasteacherdash = '';
         $hasstudentdash = '';
-        $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         if (isloggedin() && isset($COURSE->id) && $COURSE->id > 1) {
             $course = $this->page->course;
@@ -677,9 +673,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
         $course = $this->page->course;
         $context = context_course::instance($course->id);
-        $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
         $courseactivities = $this->courseactivities_menu();
-        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle && isloggedin() && !isguestuser();
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && isloggedin() && !isguestuser();
         $globalhaseasyenrollment = enrol_get_plugin('easy');
         $coursehaseasyenrollment = '';
         if ($globalhaseasyenrollment) {
@@ -693,7 +688,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ));
         }
         // Link catagories.
-        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
+        $haspermission = has_capability('enrol/category:config', $context) && isset($COURSE->id) && $COURSE->id > 1;
         $userlinks = get_string('userlinks', 'theme_bediuk');
         $userlinksdesc = get_string('userlinks_desc', 'theme_bediuk');
         $qbank = get_string('qbank', 'theme_bediuk');
@@ -725,7 +720,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $gradebooklink = new moodle_url('/grade/report/grader/index.php', array(
             'id' => $PAGE->course->id
         ));
-        $participantstitle = ($PAGE->theme->settings->studentdashboardtextbox == 1) ? false : get_string('participants', 'moodle');
+        $participantstitle = get_string('participants', 'moodle');
         $participantslink = new moodle_url('/user/index.php', array(
             'id' => $PAGE->course->id
         ));
@@ -971,10 +966,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
         $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
         $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentcompletion == 1;
-        $hascourseadminshow = $PAGE->theme->settings->showcourseadminstudents == 1;
+        $hascourseadminshow = true;
         $hascompetency = get_config('core_competency', 'enabled');
         // Send to template.
-        $haseditcog = $PAGE->theme->settings->courseeditingcog;
+        $haseditcog = true;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $dashlinks = [
             'showincourseonly' => $showincourseonly,
@@ -1276,7 +1271,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     public function show_student_navbarcolor() {
         global $PAGE;
-        $theme = theme_config::load('fordson');
+        $theme = theme_config::load('bediuk');
         $context = $this->page->context;
         $hasstudentrole = !has_capability('moodle/course:viewhiddenactivities', $context);
 
@@ -1330,8 +1325,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         global $PAGE, $COURSE, $CFG, $DB, $OUTPUT;
         $course = $this->page->course;
         $context = context_course::instance($course->id);
-        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle && isloggedin() && !isguestuser();
-        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && isloggedin() && !isguestuser();
+        $haspermission = has_capability('enrol/category:config', $context) && isset($COURSE->id) && $COURSE->id > 1;
         $togglebutton = '';
         $togglebuttonstudent = '';
         $hasteacherdash = '';

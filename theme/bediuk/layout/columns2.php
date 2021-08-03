@@ -27,8 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
 
-$hasfhsdrawer = isset($PAGE->theme->settings->shownavdrawer) && $PAGE->theme->settings->shownavdrawer == 1;
-if (isloggedin() && $hasfhsdrawer && isset($PAGE->theme->settings->shownavclosed) && $PAGE->theme->settings->shownavclosed == 0) {
+if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
 } else {
     $navdraweropen = false;
@@ -44,23 +43,20 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $blockshtmla = $OUTPUT->blocks('fp-a');
 $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
-$hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
-$hasactivitynav = ($PAGE->theme->settings->showactivitynav ==1) !== false;
+$hasactivitynav = true;
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
-	'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
+	'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) ,
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'fpablocks' => $blockshtmla,
     'fpbblocks' => $blockshtmlb,
     'fpcblocks' => $blockshtmlc,
-    'hasfpblockregion' => $hasfpblockregion,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
-    'hasfhsdrawer' => $hasfhsdrawer,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'hasactivitynav' => $hasactivitynav
